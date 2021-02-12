@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pl.edu.pw.mini.zpoif.projekt.jung_sawicki.GUI.NotificationsController">
+   <children>
+      <TextField fx:id="stockSymbolForNotification" layoutX="99.0" layoutY="201.0" prefHeight="25.0" prefWidth="134.0" />
+      <Label layoutX="104.0" layoutY="174.0" text="Wpisz symbol giełdowy" />
+      <Button fx:id="submitNotificationButton" layoutX="100.0" layoutY="494.0" mnemonicParsing="false" onAction="#submitNotification" text="Dodaj powiadomienie" />
+      <Label layoutX="98.0" layoutY="250.0" text="Powiadom kiedy cena:" />
+      <RadioButton fx:id="priceHigherRadio" layoutX="100.0" layoutY="283.0" mnemonicParsing="false" onAction="#priceHigherRadioClick" selected="true" text="wzrośnie powyżej">
+         <toggleGroup>
+            <ToggleGroup fx:id="ToggleGroup1" />
+         </toggleGroup></RadioButton>
+      <RadioButton fx:id="priceLowerRadio" layoutX="100.0" layoutY="316.0" mnemonicParsing="false" onAction="#priceLowerRadioClick" text="spdadnie poniżej" toggleGroup="$ToggleGroup1" />
+      <TextField fx:id="notificationPrice" layoutX="92.0" layoutY="352.0" promptText="cena w dolarach" />
+      <Button fx:id="returnToPlotsButton" layoutX="931.0" layoutY="702.0" mnemonicParsing="false" onAction="#returnToPlots" text="Wróć do wykresów" />
+      <TableView fx:id="notificationsTable" layoutX="341.0" layoutY="185.0" prefHeight="360.0" prefWidth="602.0">
+        <columns>
+          <TableColumn fx:id="stockSymbolCol" prefWidth="119.0" text="Symbol" />
+          <TableColumn fx:id="typeCol" prefWidth="142.0" text="Warunek" />
+            <TableColumn fx:id="priceCol" prefWidth="84.0" text="Cena" />
+            <TableColumn fx:id="statusCol" prefWidth="120.0" text="Status" />
+            <TableColumn fx:id="removeButtonCol" prefWidth="105.0" />
+
+        </columns>
+      </TableView>
+   </children>
+</Pane>

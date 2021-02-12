@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.collections.FXCollections?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.Pane?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pl.edu.pw.mini.zpoif.projekt.jung_sawicki.GUI.PlotController">
+   <children>
+      <LineChart fx:id="plot" layoutX="35.0" layoutY="39.0" prefHeight="671.0" prefWidth="831.0">
+        <xAxis>
+          <NumberAxis side="BOTTOM" fx:id="xAxis" />
+        </xAxis>
+        <yAxis>
+          <NumberAxis fx:id="yAxis" side="LEFT" />
+        </yAxis>
+      </LineChart>
+      <Label layoutX="880.0" layoutY="56.0" text="Wpisz symbol giełdowy:" />
+      <TextField fx:id="stockSymbol" layoutX="880.0" layoutY="78.0" prefHeight="26.0" prefWidth="171.0" />
+      <Button layoutX="1072.0" layoutY="78.0" mnemonicParsing="false" onAction="#downloadData" text="Dodaj" />
+      <TableView fx:id="stocksTable" layoutX="882.0" layoutY="193.0" prefHeight="515.0" prefWidth="253.0">
+        <columns>
+          <TableColumn fx:id="stockSymbolCol" prefWidth="143.0" text="Spółka" />
+          <TableColumn fx:id="buttonCol" prefWidth="109.0" />
+        </columns>
+          <items>
+              <FXCollections fx:factory="observableArrayList">
+
+              </FXCollections>
+          </items>
+      </TableView>
+      <Button fx:id="goToNotificationsButton" layoutX="962.0" layoutY="731.0" mnemonicParsing="false" onAction="#goToNotifications" text="Ustawienia powiadomień" />
+      <RadioButton fx:id="movingAvg" layoutX="880.0" layoutY="151.0" mnemonicParsing="false" text="Zastosuj średnią kroczącą 30 min" />
+   </children>
+</Pane>
